@@ -6,7 +6,7 @@
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 18:56:09 by mcreus            #+#    #+#             */
-/*   Updated: 2023/02/22 19:16:03 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/02/23 11:09:49 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int		ft_putunbr(unsigned long int n, const char *base);
 int		ft_putstr(char *str);
 size_t	ft_strlen(const char *str);
 size_t	ft_unbrlen_base(unsigned long int nbr, size_t base);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putchar_fd(char c, int fd);
+int		ft_putnbr(int n);
+int		ft_putchar(char c);
+int		*ft_strchr(const char *s, int c);
 
 #endif

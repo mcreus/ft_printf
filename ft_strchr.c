@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 17:42:24 by mcreus            #+#    #+#             */
-/*   Updated: 2023/02/23 11:36:58 by mcreus           ###   ########.fr       */
+/*   Created: 2023/02/23 09:45:21 by mcreus            #+#    #+#             */
+/*   Updated: 2023/02/23 11:33:11 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-size_t	ft_strlen(const char *str)
+int	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	while (*s)
+	{
+		if (*s == (char) c)
+			return ((int *) s);
+		s++;
+	}
+	if (*s == (char) c)
+		return ((int *) s);
+	return (0);
 }

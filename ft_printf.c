@@ -6,18 +6,18 @@
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 15:47:09 by mcreus            #+#    #+#             */
-/*   Updated: 2023/02/22 18:43:05 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/02/23 15:55:08 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static int	ft_case(va_list(args, const char format))
+static int	ft_case(va_list(args), const char format)
 {
 	unsigned long	ptr;
 
 	if (format == 'c')
-		return (ft_putchar_fd(va_arg(args, int), 1));
+		return (ft_putchar(va_arg(args, int)));
 	else if (format == 's')
 		return (ft_putstr(va_arg(args, char *)));
 	if (format == 'p')
@@ -29,8 +29,8 @@ static int	ft_case(va_list(args, const char format))
 			return (ft_putstr("(nil)"));
 	}
 	else if (format == 'd' || format == 'i')
-		return (ft_putnbr_fd(va_arg(args, int), 1));
-	else if (format == "u")
+		return (ft_putnbr(va_arg(args, int)));
+	else if (format == 'u')
 		return (ft_putunbr(va_arg(args, unsigned int), "0123456789"));
 	else if (format == 'x' || format == 'X')
 		return (ft_puthexa(va_arg(args, unsigned int), format));
@@ -44,22 +44,22 @@ int	ft_printf(const char *str, ...)
 {
 	va_list	args;
 	int		i;
-	int		len;
+	int		nblen;
 
 	i = 0;
-	len = 0;
+	nblen = 0;
 	va_start(args, str);
 	while (str[i])
 	{
-		if (s[i] == '%' && ft_strchr("cspdiuxX%", str[i]))
+		if (str[i] == '%' && ft_strchr("cspdiuxX%", str[i]))
 		{
-			len += ft_case(args, s[i + 1]);
+			nblen += ft_case(args, str[i + 1]);
 			i++;
 		}
 		else
-			len += ft_putchar(s[i]);
+			nblen += ft_putchar(str[i]);
 		i++;
 	}
 	va_end(args);
-	return (len);
+	return (nblen);
 }

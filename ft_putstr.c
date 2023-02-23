@@ -6,7 +6,7 @@
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 15:34:28 by mcreus            #+#    #+#             */
-/*   Updated: 2023/02/22 15:38:44 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/02/23 15:42:46 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,14 @@ int	ft_putstr(char *str)
 
 	i = 0;
 	if (!str[i])
-		return (write(1, "null", 6));
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
 	while (str[i])
+	{
+		write(1, &str[i], 1);
 		i++;
-	return (write(1, str, i));
+	}
+	return (i);
 }

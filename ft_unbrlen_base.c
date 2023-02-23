@@ -6,7 +6,7 @@
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:22:04 by mcreus            #+#    #+#             */
-/*   Updated: 2023/02/22 17:26:24 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/02/23 10:12:01 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ size_t	ft_unbrlen_base(unsigned long int nbr, size_t base)
 	size_t	i;
 
 	i = 1;
-	while (n >= (unsigned long int)base)
+	while (nbr >= (unsigned long int)base)
 	{
-		n /= base;
+		nbr /= base;
 		i++;
 	}
 	return (i);
