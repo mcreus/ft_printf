@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 18:56:09 by mcreus            #+#    #+#             */
-/*   Updated: 2023/02/23 11:09:49 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/02/24 17:04:52 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		ft_putstr(char *str);
 size_t	ft_strlen(const char *str);
 size_t	ft_unbrlen_base(unsigned long int nbr, size_t base);
 int		ft_putnbr(int n);
-int		ft_putchar(char c);
+size_t	ft_putchar(char c);
 int		*ft_strchr(const char *s, int c);
 
 #endif

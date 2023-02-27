@@ -6,7 +6,7 @@
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 15:47:09 by mcreus            #+#    #+#             */
-/*   Updated: 2023/02/23 15:55:08 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/02/27 10:25:29 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ static int	ft_case(va_list(args), const char format)
 	else if (format == 'd' || format == 'i')
 		return (ft_putnbr(va_arg(args, int)));
 	else if (format == 'u')
-		return (ft_putunbr(va_arg(args, unsigned int), "0123456789"));
+		return (ft_putunbr(va_arg(args, unsigned long int), "0123456789"));
 	else if (format == 'x' || format == 'X')
-		return (ft_puthexa(va_arg(args, unsigned int), format));
+		return (ft_puthexa(va_arg(args, unsigned long int), format));
 	else if (format == '%')
 		return (ft_putchar('%'));
 	else
@@ -51,7 +51,7 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (str[i])
 	{
-		if (str[i] == '%' && ft_strchr("cspdiuxX%", str[i]))
+		if (str[i] == '%' && ft_strchr("cspdiuxX%", str[i + 1]))
 		{
 			nblen += ft_case(args, str[i + 1]);
 			i++;

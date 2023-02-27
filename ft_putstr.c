@@ -6,26 +6,16 @@
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 15:34:28 by mcreus            #+#    #+#             */
-/*   Updated: 2023/02/23 15:42:46 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/02/24 17:19:49 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_putstr(char *str)
+size_t	ft_putstr(char *str)
 {
-	int	i;
-
-	i = 0;
-	if (!str[i])
-	{
-		ft_putstr("(null)");
-		return (6);
-	}
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-	return (i);
+	if (!str)
+		return (write(1, "(null)", 6));
+	else
+		return (write(1, str, ft_strlen(str)));
 }
