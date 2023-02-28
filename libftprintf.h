@@ -6,7 +6,7 @@
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 18:56:09 by mcreus            #+#    #+#             */
-/*   Updated: 2023/02/27 12:33:13 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/02/28 15:07:43 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 # include <string.h>
 
 int		ft_printf(const char *str, ...);
-int		ft_puthexa(unsigned long int n, char format);
-int		ft_putunbr(unsigned long int n, const char *base);
+int		ft_puthexa(unsigned long long int n, char format);
+int		ft_putunbr(unsigned long long int n, const char *base);
 size_t	ft_putstr(char *str);
 size_t	ft_strlen(const char *str);
 size_t	ft_unbrlen_base(unsigned long int nbr, size_t base);

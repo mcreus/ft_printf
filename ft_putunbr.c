@@ -6,16 +6,16 @@
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 18:39:18 by mcreus            #+#    #+#             */
-/*   Updated: 2023/02/24 17:17:01 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/02/28 15:41:11 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_putunbr(unsigned long int n, const char *base)
+int	ft_putunbr(unsigned long long int n, const char *base)
 {
-	unsigned long int	base_len;
-	int					nb_len;
+	unsigned long long int	base_len;
+	int						nb_len;
 
 	nb_len = 0;
 	base_len = ft_strlen(base);

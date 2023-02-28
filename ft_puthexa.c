@@ -6,13 +6,13 @@
 /*   By: mcreus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:29:09 by mcreus            #+#    #+#             */
-/*   Updated: 2023/02/24 17:19:19 by mcreus           ###   ########.fr       */
+/*   Updated: 2023/02/28 15:40:07 by mcreus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_puthexa(unsigned long int n, char format)
+int	ft_puthexa(unsigned long long int n, char format)
 {
 	char			*base;
 	int				len;
